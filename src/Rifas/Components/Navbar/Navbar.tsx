@@ -10,8 +10,13 @@ import {
   Typography,
 } from "@mui/material";
 import { NavbarProps } from "./Navbar.types";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar: FC<NavbarProps> = ({ drawerWidth = 0 }) => {
+  const { loginWithRedirect } = useAuth0();
+
+  const handleLogin = () => loginWithRedirect();
+
   return (
     <AppBar
       position="fixed"
@@ -31,7 +36,7 @@ export const Navbar: FC<NavbarProps> = ({ drawerWidth = 0 }) => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
+              <IconButton sx={{ p: 0 }} onClick={handleLogin}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>

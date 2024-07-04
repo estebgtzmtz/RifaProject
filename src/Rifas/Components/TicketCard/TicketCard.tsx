@@ -37,7 +37,7 @@ export const TicketCard = () => {
               <ConfirmationNumberIcon />
             </IconButton>
             <div className="cost-per-ticket-description">
-              <Typography>Costo por boleto</Typography>
+              <Typography variant="subtitle2">Costo por boleto</Typography>
               <Typography>$200</Typography>
             </div>
           </div>
